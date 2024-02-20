@@ -1,11 +1,11 @@
 'use strict';
-const got = require('got');
-const solveChallenge = require('./lib/core');
-const solveCaptcha = require('./lib/captcha');
-const delay = require('./lib/delay');
-const log = require('./lib/logging');
-const { CookieJar } = require('tough-cookie');
-const UserAgent = require('user-agents');
+import got from 'got';
+import delay from './delay.js';
+import log from './logging.js';
+import { CookieJar } from 'tough-cookie';
+import UserAgent from 'user-agents';
+import { solve as solveChallenge } from './core.js';
+import { solve as solveCaptcha } from './captcha.js';
 
 const cookieJar = new CookieJar(); // Automatically parse and store cookies
 const challengeInProgress = {};
@@ -138,4 +138,4 @@ const instance = got.extend({
   mutableDefaults: true, // Defines if config can be changed later
 });
 
-module.exports = instance;
+export default instance;

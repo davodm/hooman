@@ -1,6 +1,6 @@
-const hooman = require('../');
-const assert = require('assert');
-const { writeFileSync, statSync } = require('fs');
+import hooman from '../hooman.js';
+import assert from 'assert';
+import { writeFileSync, statSync } from 'fs';
 
 // Test URL
 const hCaptchaPage = 'https://cf-captcha.sayem.eu.org';
